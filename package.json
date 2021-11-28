@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Bateeters/M04TutorialTeeters/issues"
   },
-  "homepage": "https://github.com/Bateeters/M04TutorialTeeters#readme"
+  "homepage": "https://github.com/Bateeters/M04TutorialTeeters#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
