@@ -1,21 +1,21 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 //express app
 const app = express();
 
 // connect to mongodb
-const dbURI = 'mongodb+srv://<bteeters:Spartan13!@nodetuts.vbvnf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://<bteeters:Spartan13@nodetuts.vbvnf.mongodb.net/node-tuts?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((resut) => app.listen(3000))
+    .catch((err) => console.log(err));
 
 //register view engine
 app.set('view engine', 'ejs');
 
-// listen for requests
-app.listen(3000);
-
 // middleware & static files
 app.use(express.static('public'))
-
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => {
